@@ -1,0 +1,54 @@
+name: enhance-prompt
+
+params:
+  type: object
+  properties:
+    PROMPT_PILOT_API_KEY:
+      type: string
+      description: prompt pilot api key
+  required:
+    - PROMPT_PILOT_API_KEY
+
+rest:
+  port: 9593
+  endpoint: /rest
+
+npx:
+  command: PROMPT_PILOT_API_KEY={PROMPT_PILOT_API_KEY} npx -y enhance-prompt-server
+  config: | 
+    {
+        "mcpServers": {
+          "enhance-prompt": {
+            "command": "npx",
+            "args": [
+              "-y",
+              "enhance-prompt-server"
+            ],
+            "env": {
+              "PROMPT_PILOT_API_KEY": "YOUR_API_KEY_HERE"
+            }
+          }
+        }
+      }
+
+docker:
+  command: docker run -i --rm -e PROMPT_PILOT_API_KEY={PROMPT_PILOT_API_KEY} mcp/enhance-prompt-server
+  config: | 
+    {
+        "mcpServers": {
+          "server-enhance-prompt": {
+            "command": "docker",
+            "args": [
+              "run",
+              "-i",
+              "--rm",
+              "-e",
+              "PROMPT_PILOT_API_KEY",
+              "mcp/server-enhance-prompt"
+            ],
+            "env": {
+              "PROMPT_PILOT_API_KEY": "YOUR_API_KEY_HERE"
+            }
+          }
+        }
+    }
