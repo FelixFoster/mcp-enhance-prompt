@@ -1,4 +1,4 @@
-# PromptPilot <img src="https://promptpilot.online/favicon.ico" alt="PromptPilot" style="width:28px;"> - AI Prompt Guide & Enhancer 
+# [PromptPilot](https://promptpilot.online/) <img src="https://promptpilot.online/favicon.ico" alt="PromptPilot" style="width:28px;"> - AI Prompt Guide & Enhancer 
 
 **PromptPilot** is an AI - powered web application designed to assist users in generating and enhancing prompts for various generative AI models. It offers a quick generation feature for simple needs and a unique conversational guide (Masterful Prompt Creator) for crafting high - quality, detailed prompts. This repository contains the codebase for PromptPilot.
 
