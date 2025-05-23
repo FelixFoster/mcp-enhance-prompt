@@ -52,12 +52,12 @@ node build/index.js
 #### Option 2: Run with Docker
 ```bash
 docker build -t enhance-prompt-server .
-docker run -i --rm -e PROMPT_PILOT_API_KEY=your_prompt_pilot_api_key enhance-prompt-server
+docker run -i --rm enhance-prompt-server
 ```
 
 #### Option 3: Run with npx
 ```bash
-PROMPT_PILOT_API_KEY=your_prompt_pilot_api_key npx -y enhance-prompt-server
+npx -y enhance-prompt-server
 ```
 
 ### Step 6: Access the Application
