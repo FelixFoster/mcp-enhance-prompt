@@ -57,7 +57,6 @@ server.setRequestHandler(ListToolsRequestSchema, async (request) => {
 });
 
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  console.log("request", request);
   const apiKey = promptPilotApiKey || getAuthValue(request, "PROMPT_PILOT_API_KEY");
   const prompt = String(request.params.arguments?.prompt);
   const url = "https://promptpilot.online/api/mcp";
@@ -77,7 +76,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const errorText = await response.text().catch(() => "Unable to parse error response");
       throw new Error(`Prompt Pilot API error: ${response.status} ${response.statusText}\n${errorText}`);
     }
-    console.log("response", response);
     const rawJson = await response.json();
     const responseJson:ResponseBody = ResponseBodySchema.parse(rawJson);
 
